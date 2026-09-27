@@ -1,6 +1,6 @@
 """Microsoft Graph Client: Client-Credentials-Auth, Kontaktordner, Kontakt-CRUD."""
 
-__version__ = "0.1.0"
+__version__ = "1.1.0"
 import time
 
 GRAPH = "https://graph.microsoft.com/v1.0"

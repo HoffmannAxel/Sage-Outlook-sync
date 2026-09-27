@@ -1,6 +1,6 @@
 """Gemeinsame Sync-Logik für CLI und Windows-Dienst."""
 
-__version__ = "0.1.0"
+__version__ = "1.1.0"
 import logging
 import os
 

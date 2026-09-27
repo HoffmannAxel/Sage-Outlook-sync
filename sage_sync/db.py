@@ -1,6 +1,6 @@
 """MySQL-Zugriff und automatische Erkennung der Sage-Kundentabelle/-spalten."""
 
-__version__ = "0.1.0"
+__version__ = "1.1.0"
 from .mapping import FIELDS, _CANDIDATES, normalize_customer
 
 

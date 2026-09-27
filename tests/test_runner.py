@@ -1,6 +1,6 @@
 """Integrationstest: voller Sync-Zyklus mit Fake-MySQL und Fake-Graph."""
 
-__version__ = "0.1.0"
+__version__ = "1.1.0"
 import os
 import tempfile
 import unittest

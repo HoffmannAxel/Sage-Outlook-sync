@@ -1,0 +1,67 @@
+# Beispielkonfiguration -> nach config.toml kopieren und ausfüllen.
+# sage-outlook-sync v1.1.0
+# Der Sync läuft idempotent: beliebig oft ausführbar (z.B. stündlich per Taskplaner/Cron).
+
+[mysql]
+host = "127.0.0.1"
+port = 3306
+user = "sage_readonly"
+password = "********"
+database = "sage50"
+charset = "utf8mb4"
+
+# Roots-Verzeichnis der Sage-50-Datenbank (aus config.inc von Janaschiwa/Rewe).
+# Kann auch als CLI-Argument --sage-roots übergeben werden.
+sage_roots = "C:\\ProgramData\\Sage\\Sage 50\\daten"
+
+# Abweichende Tabellen-/Spaltennamen hier überschreiben.
+# Wenn leer, wird die Struktur automatisch erkannt (siehe `python -m sage_sync --discover`).
+[mysql.mapping]
+customer_table = ""
+account_number_column = ""
+name_column = ""
+department_column = ""
+name2_column = ""
+street_column = ""
+zip_column = ""
+city_column = ""
+country_column = ""
+phone_column = ""
+fax_column = ""
+email_column = ""
+website_column = ""
+bank_column = ""
+account_holder_column = ""
+iban_column = ""
+bic_column = ""
+notes_column = ""
+department2_column = ""
+
+[graph]
+# Azure-App-Registrierung: https://portal.azure.com -> App registrations
+tenant_id = "00000000-0000-0000-0000-000000000000"
+client_id = "00000000-0000-0000-0000-000000000000"
+# Geheimer Clientschlüssel (Value, nicht Secret-ID)
+client_secret = "********"
+
+[sync]
+# Ziel-Postfach (UPN), dessen Kontaktordner befüllt wird
+target_mail = "vorname.nachname@firma.de"
+# Sync-Intervall im Dauerbetrieb (Dienst: python -m sage_sync.service)
+interval_minutes = 60
+# Relativer Pfad (relativ zur config.toml) für den lokalen Zustand
+state_path = "state.db"
+# Relativer Pfad für das Logfile im Dienstbetrieb; leer = nur Konsole/Eventlog
+log_file = "sync.log"
+
+[contacts]
+# Ziel-Kontaktordner im Outlook-Konto; wird bei Bedarf angelegt.
+# Wichtig: der Sync verwaltet standardmäßig nur Kontakte in diesem Ordner
+folder_name = "Sage Kontakte"
+# E-Mail-Adressen von Sage sind oft nicht gepflegt: true = Kontakte ohne
+# E-Mail-Adresse trotzdem anlegen
+keep_without_email = true
+# true = in Sage gelöschte/verschwindende Kunden werden im Ordner gelöscht
+delete_missing = true
+# Unternehmenskontakte um Firmenanschrift (postalAddress) ergänzen
+with_postal_address = true

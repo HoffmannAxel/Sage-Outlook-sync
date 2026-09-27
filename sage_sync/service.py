@@ -17,7 +17,7 @@ Konsolmodus für Tests/Handbetrieb:
     python -m sage_sync.service --config config.toml --once     # ein einzelner Sync-Lauf
 """
 
-__version__ = "0.1.0"
+__version__ = "1.1.0"
 import argparse
 import logging
 import os

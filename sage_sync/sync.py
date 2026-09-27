@@ -1,6 +1,6 @@
 """Diff-Engine: gleicht Sage-Kunden mit Outlook-Kontakten ab (idempotent)."""
 
-__version__ = "0.1.0"
+__version__ = "1.1.0"
 import dataclasses
 import json
 import sqlite3

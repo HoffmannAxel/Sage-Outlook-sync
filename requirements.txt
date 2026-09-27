@@ -1,4 +1,4 @@
-# sage-outlook-sync v0.1.0
+# sage-outlook-sync v1.1.0
 mysql-connector-python>=8.2
 msal>=1.26
 requests>=2.31
