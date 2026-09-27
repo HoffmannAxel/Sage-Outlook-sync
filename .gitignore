@@ -1,0 +1,8 @@
+config.toml
+state.db
+__pycache__/
+*.pyc
+.venv/
+venv/
+sync.log
+Testdokumentation_Sage_Outlook_Sync.odt
