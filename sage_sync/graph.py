@@ -21,7 +21,7 @@ class GraphClient:
             client_credential=cfg.client_secret,
         )
         self._token = None
-        self self._token_expiry = 0
+        self._token_expiry = 0
 
     def _access_token(self):
         if self._token and time.time() < self._token_expiry - 60:
