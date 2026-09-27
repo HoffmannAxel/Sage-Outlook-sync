@@ -1,0 +1,6 @@
+# sage-outlook-sync v0.1.0
+mysql-connector-python>=8.2
+msal>=1.26
+requests>=2.31
+pywin32>=306; sys_platform == "win32"
+tomli>=2.0; python_version < "3.11"
